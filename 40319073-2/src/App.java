@@ -4,8 +4,8 @@ import attack.SmallNAttack;
 import java.math.BigInteger;
 
 public class App {
-    private static final int PRIME_BITS = 512;
-    private static final int MR_ROUNDS = 20;
+    private static final int PRIME_BITS = 1024;
+    private static final int MR_ROUNDS = 30;
 
     public static void main(String[] args) {
         System.out.println("RSA key generation with Miller-Rabin");
@@ -16,7 +16,7 @@ public class App {
         System.out.println("n bitlength = " + keypair.n.bitLength());
         System.out.println("Public exponent e = " + keypair.e);
 
-        BigInteger m = BigInteger.valueOf(12345678);
+        BigInteger m = BigInteger.valueOf(239183048);
         System.out.println("\nNumeric test:");
         System.out.println("m = " + m);
         BigInteger c = RSA.encrypt(m, keypair);
@@ -24,8 +24,8 @@ public class App {
         BigInteger recovered = RSA.decrypt(c, keypair);
         System.out.println("recovered = " + recovered);
 
-        System.out.println("\nSmall-n attack demo (for education):");
-        RSAKeyPair small = RSA.generate(8, 10);
+        System.out.println("\nSmall-n attack demo :");
+        RSAKeyPair small = RSA.generate(300, 10);
         System.out.println("small n = " + small.n + " (bits=" + small.n.bitLength() + ")");
         var fac = SmallNAttack.factor(small.n);
         if (fac != null) {

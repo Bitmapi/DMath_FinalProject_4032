@@ -1,0 +1,68 @@
+input :
+PRIME_BITS = 512
+MR_ROUNDS = 20
+m = 12345678
+Small n with 8primebits
+
+output :
+RSA key generation with Miller-Rabin
+Key generation took 721 ms
+n bitlength = 1023
+Public exponent e = 65537
+
+Numeric test:
+m = 12345678
+cipher (hex) = 431de1d07825a9796c67b61d0bdc1e5432beb07a4d5701283e6e8c0ed83c73a430a3a96a544bd35c1fa8ad22fba2bd0e2aa58b929cee516e70155ba9c02b8c9d542a6b09bdfff0d3b33f27cfdd5e7dceb6dbae9cabb32619463f37fcc22dc35b0b5ab81321a185158ba386621d17157b02a011909763a41f059c4d6ecb132aff
+recovered = 12345678
+
+Small-n attack demo:
+small n = 26167 (bits=15)
+Factored small n => p=137, q=191
+
+Done.
+
+------------------------------------------------
+input:
+PRIME_BITS = 1024
+MR_ROUNDS = 30
+m = 239183048
+Small n with 16primebits
+
+output:
+RSA key generation with Miller-Rabin
+Key generation took 2526 ms
+n bitlength = 2048
+Public exponent e = 65537
+
+Numeric test:
+m = 239183048
+cipher (hex) = 4e4ae77a857fa26c82a183a678e0a33f8eda6e189f6f557a65332868caba18c03f61431ae6f6dfeeded6feb60e1a0be74553029d74f53eacd6fb1eda3b4d9981bbca9f1d1d6b88c0d6c852ab81406ad33093e9645e1b5e3b643bf9c146ef95f323f24f5083be084243297a07c8c002f08fd134fab51595a10cc8fb94103c8f2e984c6aea1bd62f3cb6d531da3fc91bcb2d5e018f58703e25f8dca42c2ada8f058b829cdbf4ed16444b674f8794a1d816ddbe531448188d553d592bd0b2f35ec074726d8a48b18c9985260a868b33df7df530c997b7c06f2c641ec04203b78bd4a2ab0351a13573747e51b61a2592d2c37ef9a6f0f18d66f86ed8b8f20416dbee
+recovered = 239183048
+
+Small-n attack demo:
+small n = 1521666017 (bits=31)
+Factored small n => p=36061, q=42197
+
+Done.
+------------------------------------------
+input:
+PRIME_BITS = 1024
+MR_ROUNDS = 30
+m = 239183048
+Small n with 300primebits
+
+output:
+RSA key generation with Miller-Rabin
+Key generation took 6228 ms
+n bitlength = 2047
+Public exponent e = 65537
+
+Numeric test:
+m = 239183048
+cipher (hex) = 1da89b9062f4495c78fc5ea5a506d2a1e514879dd715e68af93620b054773411f8f3288d0cad45a7a4f5a7c9ca626f2cf310adbc62300a826834f630f68a7ad706f0fb0222bcd5b096ce1ac3f994a99529c08171cde930219ca307c476fd3ccb1d40bd1c08d696e23aef7a8e8fddb47d82c4acac14f5ba3aafa53fb8ce176b663b69c6cfee4d30dd20355ab1a24296d1619f2dd138cc1f577f4445628dcb7b77fd587ac621e6127563d4329de30a9c050af02416ff2dc1c0ceafed0b2e20a60e15d94c39167fca8d2fb1094f2335a72f95d77669c688326c3be413632a5dcc079b117872e5a75a55a27825f91028109a9e28d75c3c0a5fd744b8115c8b58b1d
+recovered = 239183048
+
+Small-n attack demo (for education):
+small n = 2230465419596514649192680853721906347500869897307807449647435913272438129548715761016795953378726185559508522153353775929696113421208463083679603662102977446769206403799679262653491 (bits=600)
+(took so long it couldn't find p and q , had to end the program manually)
+------------------------------------------
